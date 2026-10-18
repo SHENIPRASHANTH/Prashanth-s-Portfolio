@@ -3,7 +3,6 @@ import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
 import { viewerProfiles, type ProfileId, type Project, type SectionId } from './data/portfolio';
 import { SmoothScrollProvider, useSmoothScroll } from './hooks/smoothScroll';
 import CustomCursor from './components/CustomCursor';
-import BackgroundMusic from './components/BackgroundMusic';
 import OpeningSequence from './components/OpeningSequence';
 import ProfileSelector from './components/ProfileSelector';
 import Navbar from './components/Navbar';
@@ -108,7 +107,6 @@ function Series() {
     <LayoutGroup>
       <div className="grain" aria-hidden />
       <CustomCursor />
-      <BackgroundMusic stage={stage} />
 
       <AnimatePresence>
         {stage === 'opening' && <OpeningSequence key="opening" onDone={() => setStage('profiles')} />}
